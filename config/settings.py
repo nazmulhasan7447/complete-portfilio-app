@@ -9,14 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-v$k0e=-acp+u$&%*u_#o2+g@n%cvrurt*4^3#6=7xxeniw_s2)'
-# DEBUG = True
-# ALLOWED_HOSTS = []
+SECRET_KEY = 'django-insecure-v$k0e=-acp+u$&%*u_#o2+g@n%cvrurt*4^3#6=7xxeniw_s2)'
+DEBUG = True
+ALLOWED_HOSTS = []
 
 # digital ocean
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
-DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+# SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+# DEBUG = os.getenv("DEBUG", "False") == "True"
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -67,28 +67,28 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # digital ocean
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-   }
+# DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+# if DEVELOPMENT_MODE is True:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#         }
+#     }
+# elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+#     if os.getenv("DATABASE_URL", None) is None:
+#         raise Exception("DATABASE_URL environment variable not defined")
+#     DATABASES = {
+#         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+#    }
 
 
 # Password validation
