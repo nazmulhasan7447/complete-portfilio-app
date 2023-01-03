@@ -1,0 +1,54 @@
+@font-face {
+  font-family: italic_205_tf;
+  src: url(../fonts/Clifton\ -\ Italic-205TF.eot);
+}
+
+@font-face {
+  font-family: italic_205_otf;
+  src: url(../fonts/Clifton\ -\ Italic-205TF.otf);
+}
+
+@font-face {
+  font-family: italic_205_svg;
+  src: url(../fonts/Clifton\ -\ Italic-205TF.svg);
+}
+
+@font-face {
+  font-family: italic_205_ttf;
+  src: url(../fonts/Clifton\ -\ Italic-205TF.ttf);
+}
+
+@font-face {
+  font-family: italic_205_wof;
+  src: url(../fonts/Clifton\ -\ Italic-205TF.woff);
+}
+
+@font-face {
+  font-family: italic_205_wof2;
+  src: url(../fonts/Clifton\ -\ Italic-205TF.woff2);
+}
+
+@font-face {
+  font-family: sneak_bold_woff;
+  src: url(../fonts/Sneak-Bold.woff);
+}
+
+@font-face {
+  font-family: sneak_bold_woff2;
+  src: url(../fonts/Sneak-Bold.woff2);
+}
+
+@font-face {
+  font-family: sneak_regular_eot;
+  src: url(../fonts/Sneak-Regular.eot);
+}
+
+@font-face {
+  font-family: sneak_regular_woff;
+  src: url(../fonts/Sneak-Regular.woff);
+}
+
+@font-face {
+  font-family: sneak_regular_woff2;
+  src: url(../fonts/Sneak-Regular.woff2);
+}

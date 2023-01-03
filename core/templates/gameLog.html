@@ -1,0 +1,139 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block main_block %}
+
+{% if messages %}
+{% for message in messages %}
+
+<div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible" {% endif %}>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}!
+</div>
+
+{% endfor %}
+{% endif %}
+
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Add new <strong>Game Log Image <b>(Minimum-dimension: 350px(width) X 185px(height)</b></strong>
+                </h4>
+                <form action="{% url 'add_game_log' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="file" name="pic" class="dropify banner_img_upload_field"
+                           id="banner_img_upload_field"/>
+                    </div>
+
+                    <input type="submit" value="ADD"
+                           style="width: 120px; height: 35px; background: #0B94F7; outline: none; border: none; margin-top: 10px; cursor: pointer; color: white;"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <img src="{% static 'avatar.png' %}" class="prev_banner_img" style="width: 100%; height: 250px" alt="">
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Data table</h4>
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table id="order-listing" class="table">
+                        <thead>
+                        <tr>
+                            <th>ID#</th>
+                            <th>Image/video</th>
+                            <th>added</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if game_logs %}
+                        {% for g in game_logs %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>
+                                {% if g.img %}
+                                <img src="{{g.img.url}}" style="width: 80px; height: 80px;" />
+                                {% else %}
+                               <video controls width="250" height="250">
+                                    <source src="{{g.video.url}}"
+                                            type="video/mp4">
+                                </video>
+                                {% endif %}
+                            </td>
+                            <td>{{g.added}}</td>
+                            <td class="d-flex">
+                                <a href="{% url 'editGameLog' pk=g.pk %}">
+                                            <button type="button" class="btn" style="border:none; background: #00C0EF;color:white; cursor: pointer;height: 30px;">
+                                                <i class="fas fa-edit"></i> Update </button>
+                                        </a>
+                                <!-- modal for deleting object-->
+
+                                        <button type="button" class="btn" style="margin-left: 10px; border:none; background: #FF0000;color:white; cursor: pointer; height: 30px;" data-toggle="modal"
+                                                data-target="#remove{{g.pk}}">
+                                                <i class="fas fa-backspace"></i> Remove
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="remove{{g.pk}}" tabindex="-1" role="dialog"
+                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title text-left" id="exampleModalLabel">Are you confirm to delete this?</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                        <a href="{% url 'removeGameLog' pk=g.pk %}">
+                                    <button type="submit" class="btn btn-outline-primary">Remove</button>
+                                </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--                                        modal for deleting object ends-->
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const banner_img_upload_field = document.querySelector('.banner_img_upload_field');
+    const banner_img_upload_btn = document.querySelector('.banner_img_upload_btn');
+    const  prev_banner_img = document.querySelector('.prev_banner_img');
+
+    banner_img_upload_field.onchange = ()=>{
+        const [banner_img] = banner_img_upload_field.files;
+        if (banner_img) {
+            prev_banner_img.src = URL.createObjectURL(banner_img);
+        }
+    }
+
+    banner_img_upload_btn.onclick =()=>{
+        banner_img_upload_field.click();
+    }
+
+</script>
+{% endblock %}

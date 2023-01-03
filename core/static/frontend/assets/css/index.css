@@ -1,0 +1,254 @@
+body {
+  background: #f9f6ef;
+}
+
+.navigation-bar {
+  background-color: #f9f6ef;
+}
+
+.navigation-bar nav .container {
+  position: relative;
+}
+
+/* offcanvas design */
+.offcanvas {
+  background-color: #f9f6ef;
+}
+.offcanvas-header button {
+  border: none;
+  outline: none;
+  background-color: #f9f6ef !important;
+  color: #726f6a;
+}
+
+/* offcanvas design endsv*/
+
+.navigation-bar nav button {
+  border: none;
+  outline: none;
+  background-color: none;
+  background: none;
+  position: absolute;
+  right: 0;
+}
+
+.home-page-cover-img {
+  max-height: 500px;
+}
+
+.home-page-cover-img img {
+  width: 100%;
+  max-height: 250px;
+  transition: all 1s;
+}
+
+.home-page-cover-img img:hover {
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.home-list-group {
+  margin-top: 5px;
+  max-height: 500px;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.home-list-group:hover {
+  overflow-y: scroll;
+}
+
+.home-list-group li {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: sneak_regular_woff;
+  color: #726f6a;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.home-list-group li:hover {
+  color: #c3bb7c;
+}
+
+.home-list-group .active {
+  color: #c3bb7c;
+}
+
+.home-list-group li:not(:last-child) {
+  border-top: 1px solid #a9aaa2;
+  border-bottom: 1px solid #a9aaa2;
+}
+
+.sara-ryder-position-title h3 {
+  font-size: 60px;
+  font-family: sneak_bold_woff2;
+}
+
+.sara-ryder-position-title p {
+  font-family: italic_205_wof2;
+}
+
+.more-info {
+  font-family: italic_205_wof2;
+  width: fit-content;
+  cursor: pointer;
+  /* border-bottom: 1px solid transparent; */
+  /* border-image: url(../images/singleline.png) 20% stretch; */
+}
+
+.less-info {
+  display: none;
+  font-family: italic_205_wof2;
+  cursor: pointer;
+}
+
+.email-linkedin-instagram-tabs {
+  position: relative;
+  display: none;
+  height: 200px;
+  /* animation: tabsAnim 1s; */
+}
+
+/* @keyframes tabsAnim {
+  0% {
+    position: relative;
+    opacity: 0.1;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  100% {
+    position: relative;
+    opacity: 1;
+    height: 200px;
+    overflow: hidden;
+  }
+} */
+
+.home-tab-content .tab-pane {
+  position: relative;
+}
+
+.title-thumbnail {
+  width: 100%;
+}
+
+.title-thumbnail img {
+  width: 75%;
+}
+
+.title-thumbnail-1 {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+}
+
+.title-thumbnail-1 img {
+  width: 75%;
+}
+
+.email-linkedin-instagram-tabs .nav-pills {
+  position: relative;
+  height: auto !important;
+}
+
+.email-linkedin-instagram-tabs .tab-content {
+  position: relative;
+  height: auto !important;
+}
+
+.email-linkedin-instagram-tabs .nav-pills li button {
+  position: relative;
+  margin-left: -18px !important;
+  color: black !important;
+  background: none !important;
+  outline: none !important;
+  border: none !important;
+  font-family: italic_205_wof2;
+}
+
+.active-border {
+  border-bottom: 2px solid #c8b44c;
+}
+
+.nav-pills .nav-item .active span {
+  border-bottom: 2px solid #c8b44c !important;
+  outline: none;
+  border-radius: 0 !important;
+  width: fit-content !important;
+  overflow: hidden !important;
+}
+
+@media screen and (min-width: 992px) {
+  .navigation-bar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991.99px) {
+  .navigation-bar {
+    display: inherit;
+  }
+}
+
+@media screen and (min-width: 767.999px) and (max-width: 990.999px) {
+  .home-page-cover-img {
+    height: 500px;
+  }
+
+  .home-page-cover-img img {
+    width: 100%;
+    height: 250px;
+    transition: all 1s;
+  }
+
+  .home-list-group {
+    height: 500px;
+    overflow-y: hidden;
+  }
+
+  .home-list-group:hover {
+    overflow-y: hidden;
+  }
+  .sara-ryder-position-title h3 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 990.999px) {
+  .home-page-cover-img {
+    max-height: 700px;
+  }
+
+  .home-page-cover-img img {
+    width: 100%;
+    height: 250px;
+    transition: all 1s;
+  }
+
+  .home-list-group {
+    height: 600px;
+    overflow-y: hidden;
+  }
+
+  .home-list-group:hover {
+    overflow-y: hidden;
+  }
+}
+
+@media screen and (max-width: 767.999px) {
+  .home-list-group {
+    margin-top: 30px;
+  }
+
+  .user-details-with-social-link {
+    margin-top: 250px;
+  }
+}
+
+.display-none {
+  display: none;
+}

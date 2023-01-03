@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/project.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/index.css' %}" />
+    <style></style>
+  </head>
+
+  <body>
+    <section id="project-page" class="">
+      <div class="navigation-bar">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#staticBackdrop"
+              aria-controls="staticBackdrop"
+            >
+              Work
+            </button>
+            <div
+              class="collapse navbar-collapse"
+              id="navbarSupportedContent"
+              style="background-color: red; position: relative"
+            ></div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- offcanvas -->
+      <div
+        class="offcanvas offcanvas-start"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        id="staticBackdrop"
+        aria-labelledby="staticBackdropLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+          <button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+            Close
+          </button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="home-list-group mb-3">
+            <li>Project</li>
+            <li>Hotel June</li>
+            <li>Cocojune</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+          </div>
+        </div>
+      </div>
+      <!-- offcanvas ends -->
+
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-7">
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-1"
+                role="tabpanel"
+                aria-labelledby="pills-home-tab"
+                tabindex="0"
+              >
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-button-next">Next</div>
+                  <div class="swiper-button-prev">Previous</div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade show"
+                id="pills-2"
+                role="tabpanel"
+                aria-labelledby="pills-home-tab"
+                tabindex="0"
+              >
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-button-next">Next</div>
+                  <div class="swiper-button-prev">Previous</div>
+                  <div class="swiper-pagination"></div>
+
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/singleline.png' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="creative-direction">
+                <p>creative directions: lizzie swift</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-5">
+            <div class="project-right-sidebar">
+              <div class="client-project-category-section">
+                <div>
+                  <h1 class="client-name">Clare V.</h1>
+                  <p class="client-introduction">
+                    Clare V. is a Los Angeles-based handbag, apparel, and
+                    accessories company. As a long term freelancer, I worked
+                    closely with the creative, marketing, and merchandising
+                    teams on a variety of print, web, and digital marketing
+                    projects.
+                  </p>
+                  <div class="client-designation-and-experience-duration">
+                    <h6 class="designation">Design & Art Direction</h6>
+                    <h6 class="duration">2018 - 2021</h6>
+                  </div>
+                </div>
+
+                <div
+                  class="nav nav-pills mb-3 mt-5 project-cat-section-large-devices"
+                  id="pills-tab"
+                  role="tablist"
+                >
+                  <li
+                    class="active"
+                    id="pills-home-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-1"
+                    role="tab"
+                    aria-controls="pills-home"
+                    aria-selected="true"
+                    onclick="addAsterisk(this);"
+                  >
+                    <div class="project-catalog-section">
+                      <div class="catelog-title-section">
+                        <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                        <p>Fall 2021 Catalog</p>
+                      </div>
+
+                      <div class="catalog-category-section">
+                        <p class="name">Editorial design & art direction</p>
+                        <p class="asterisk-img">
+                          <img src="{% static 'frontend/assets/images/star_1.png' %}" />
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class=""
+                    id="pills-home-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-2"
+                    role="tab"
+                    aria-controls="pills-home"
+                    aria-selected="true"
+                    onclick="addAsterisk(this);"
+                  >
+                    <div class="project-catalog-section">
+                      <div class="catelog-title-section">
+                        <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
+                        <p>Fall 2021 Catalog</p>
+                      </div>
+                      <div class="catalog-category-section">
+                        <p>Editorial design & art direction</p>
+                        <p class="asterisk-img"></p>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+
+              <div class="others-clients-list mb-3 pt-5">
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Hotel June</a></li>
+                <li><a href="#">Cocojune</a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script src="{% static 'frontend/assets/js/projects.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/project.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

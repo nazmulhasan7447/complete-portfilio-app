@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah Ryder</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/index.css' %}" />
+  </head>
+  <body>
+    <section id="home-page">
+      <div class="navigation-bar">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#staticBackdrop"
+              aria-controls="staticBackdrop"
+            >
+              Work
+            </button>
+            <div
+              class="collapse navbar-collapse"
+              id="navbarSupportedContent"
+              style="background-color: red; position: relative"
+            ></div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- offcanvas -->
+      <div
+        class="offcanvas offcanvas-start"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        id="staticBackdrop"
+        aria-labelledby="staticBackdropLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+          <button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+            close
+          </button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="home-list-group mb-3">
+            <li>Project</li>
+            <li>Hotel June</li>
+            <li>Cocojune</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+            <li>item one</li>
+          </div>
+        </div>
+      </div>
+      <!-- offcanvas ends -->
+
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-md-8">
+            <div class="row home-page-cover-img">
+              <div class="col-md-4">
+                <img
+                  class="testimg1 display-none"
+                  src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}"
+                />
+              </div>
+
+              <div class="col-md-4">
+                <img
+                  class="testimg2 display-none"
+                  src="{% static 'frontend/assets/images/portfolio-home-page1.jpg' %}"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div
+              class="home-list-group nav nav-pills mb-3"
+              id="pills-tab"
+              role="tablist"
+              style="display: block"
+            >
+              <li
+                class="active"
+                id="testimg2"
+                onmouseover="checkHoveredElement(this);"
+                onmouseout="hideCurrentElImg(this);"
+              >
+                Project
+              </li>
+              <li
+                class=""
+                id="testimg1"
+                onmouseover="checkHoveredElement(this);"
+                onmouseout="hideCurrentElImg(this);"
+              >
+                Project
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5 pt-5">
+          <div
+            class="col-md-8 order-xs-2 order-sm-2 order-md-1 user-details-with-social-link"
+          >
+            <div class="sara-ryder-position-title">
+              <h3>
+                Sarah Ryder is a Los Angeles-based Design and Art Director.
+              </h3>
+              <p>
+                she ts currently the Design Director at Backdrop and has worked
+                on the creative teams at Pineapple Collaborative, Proper
+                Hospitality, Clare VY, Care/of, Huge Inc, and For Office Use
+                Only. She holds degrees from Parsons School of Design and
+                Barnard College.
+              </p>
+            </div>
+
+            <div
+              class="more-info-less-info"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <p class="more-info">more info</p>
+            </div>
+
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body" style="background-color: #f9f6ef">
+                <div class="email-linkedin-instagram-tabs">
+                  <div class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active"
+                        id="pills-home-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-home"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        <span>Email</span>
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link"
+                        id="pills-profile-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-profile"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        <span>LinkedIn</span>
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link"
+                        id="pills-contact-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-contact"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-contact"
+                        aria-selected="false"
+                      >
+                        <span>Instagram</span>
+                      </button>
+                    </li>
+                  </div>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="pills-home"
+                      role="tabpanel"
+                      aria-labelledby="pills-home-tab"
+                      tabindex="0"
+                    >
+                      This is some placeholder content the Home tab's associated
+                      content. Clicking another tab will toggle the visibility
+                      of this one for the next. The tab JavaScript swaps classes
+                      to control the content visibility and styling. You can use
+                      it with tabs, pills, and any other .nav-powered
+                      navigation.
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="pills-profile"
+                      role="tabpanel"
+                      aria-labelledby="pills-profile-tab"
+                      tabindex="0"
+                    >
+                      This is some placeholder content the Home tab's associated
+                      content. Clicking another tab will toggle the visibility
+                      of this one for the next. The tab JavaScript swaps classes
+                      to control the content visibility and styling. You can use
+                      it with tabs, pills, and any other .nav-powered
+                      navigation.
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="pills-contact"
+                      role="tabpanel"
+                      aria-labelledby="pills-contact-tab"
+                      tabindex="0"
+                    >
+                      This is some placeholder content the Home tab's associated
+                      content. Clicking another tab will toggle the visibility
+                      of this one for the next. The tab JavaScript swaps classes
+                      to control the content visibility and styling. You can use
+                      it with tabs, pills, and any other .nav-powered
+                      navigation.
+                    </div>
+                  </div>
+
+                  <!-- <p class="less-info mt-3">less info</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 tab-content home-tab-content order-xs-1 order-sm-1 order-md-2"
+            id="pills-tabContent"
+          >
+            <div
+              class="tab-pane fade show active"
+              id="pills-1"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
+              tabindex="0"
+            >
+              <div class="title-thumbnail">
+                <img src="{% static 'frontend/assets/images/portfolio-home-page1.jpg' %}" />
+              </div>
+
+              <div class="title-thumbnail-1">
+                <img src="{% static 'frontend/assets/images/portfolio-home-page1.jpg' %}" />
+              </div>
+            </div>
+
+            <div
+              class="tab-pane fade show"
+              id="pills-2"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
+              tabindex="0"
+            >
+              <div class="title-thumbnail">
+                <img src="{% static 'frontend/assets/images/portfolio-home-page1.jpg' %}" />
+              </div>
+
+              <!-- <div class="title-thumbnail-1">
+                <img src="./assets/images/portfolio-home-page1.jpg" />
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-5"><br /><br /><br /><br /><br /></div>
+      </div>
+    </section>
+
+    <!-- js files *********************************************** -->
+    <script src="{% static 'frontend/assets/js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block main_block %}
+
+{% if messages %}
+{% for message in messages %}
+
+<div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible" {% endif %}>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}!
+</div>
+
+{% endfor %}
+{% endif %}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Add new <strong>Game</strong>
+                </h4>
+                <form action="{% url 'editGame' pk=pk %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Upload game image <b>(Minimum-dimension: 225px(width) X 225px(height)</b></label>
+                            <input type="file" name="pic" class="dropify banner_img_upload_field"
+                           id="banner_img_upload_field" required/>
+                        </div>
+                             <div class="col-lg-6">
+                                <img src="{{current_obj.img.url}}" class="prev_banner_img" style="width: 100%; height: 250px" alt="">
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label><b>Upload Android File</b></label>
+                            <input type="file" name="android_file" class="dropify"
+                           id="banner_img_upload_field" required/>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                          <input type="text" name="apple" value="{{current_obj.apple_link}}" class="form-control link" id="exampleInputUsername1" placeholder="Apple link">
+                        </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Update"
+                           style="width: 120px; height: 35px; background: #0B94F7; outline: none; border: none; margin-top: 10px; cursor: pointer; color: white;"/>
+
+                    <a href="/add/game">
+                        <button type="button" style="border:none; background: #FF0000;color:white; cursor: pointer; height: 35px; margin-left: 10px;">
+                                                <i class="fas fa-disable"></i> Cancel
+                                        </button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const banner_img_upload_field = document.querySelector('.banner_img_upload_field');
+    const banner_img_upload_btn = document.querySelector('.banner_img_upload_btn');
+    const  prev_banner_img = document.querySelector('.prev_banner_img');
+
+    banner_img_upload_field.onchange = ()=>{
+        const [banner_img] = banner_img_upload_field.files;
+        if (banner_img) {
+            prev_banner_img.src = URL.createObjectURL(banner_img);
+        }
+    }
+
+    banner_img_upload_btn.onclick =()=>{
+        banner_img_upload_field.click();
+    }
+
+</script>
+{% endblock %}

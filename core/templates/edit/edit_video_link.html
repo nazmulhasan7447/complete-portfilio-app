@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block main_block %}
+
+{% if messages %}
+{% for message in messages %}
+
+<div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible" {% endif %}>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}!
+</div>
+
+{% endfor %}
+{% endif %}
+
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Add your <strong>Youtube</strong> video link
+                </h4>
+                <form action="{% url 'editYoutubeVideo' pk=pk %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <input type="text" name="video_link" value="{{current_obj.video_link}}" class="form-control link" id="exampleInputUsername1" placeholder="Youtube video link" required>
+                    </div>
+                    <input type="submit" value="Upload"
+                           style="width: 120px; height: 35px; background: #0B94F7; outline: none; border: none; margin-top: 10px; cursor: pointer; color: white;"/>
+
+                    <a href="/upload/video">
+                        <button type="button" style="border:none; background: #FF0000;color:white; cursor: pointer; height: 35px; margin-left: 10px;">
+                                                <i class="fas fa-disable"></i> Cancel
+                                        </button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+         <iframe
+                 id="preview_frame"
+                      style=""
+                      src="https://www.youtube.com/embed/zx3UnOyKk2c"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+    </div>
+</div>
+
+<script>
+    const preview_frame = document.querySelector('#preview_frame');
+    const link = document.querySelector('.link');
+
+    link.onchange = (e)=>{
+        preview_frame.src = e.target.value;
+    }
+
+
+</script>
+{% endblock %}
