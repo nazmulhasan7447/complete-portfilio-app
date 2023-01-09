@@ -65,15 +65,15 @@ body {
   width: fit-content;
   height: fit-content;
   left: 50%;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .swiper-button-next {
   position: absolute;
   color: white;
   top: 0;
-  margin-top: 10px;
-  right: 50px;
+  margin-top: 20px;
+  right: 30px;
   width: fit-content;
   height: fit-content;
   font-size: 13px;
@@ -87,10 +87,10 @@ body {
   position: absolute;
   color: white;
   top: 0;
-  margin-top: 10px;
+  margin-top: 20px;
   width: fit-content;
   height: fit-content;
-  left: 50px;
+  left: 30px;
   font-size: 13px;
 }
 
@@ -139,6 +139,7 @@ body {
 }
 
 .client-designation-and-experience-duration {
+  padding-top: 20px;
   display: flex;
   padding-left: 5px;
   position: relative;
@@ -157,6 +158,7 @@ body {
 
 .project-catalog-section {
   display: flex;
+  padding: 10px;
   position: relative;
 }
 
@@ -167,9 +169,15 @@ body {
   padding: 15px;
 }
 
-.catelog-title-section p {
+.project-catalog-section .sub-catalog {
   padding-left: 8px;
   font-family: italic_205_wof;
+  color: #726f6a;
+}
+
+.project-catalog-section .name {
+  /* padding-left: 8px; */
+  font-family: sneak_bold_woff;
   color: #726f6a;
 }
 
@@ -196,8 +204,17 @@ body {
 }
 
 .catalog-category-section p img {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+}
+
+.asterisk-img-section {
+  display: flex;
+}
+
+.asterisk-img img {
+  width: 15px;
+  height: 15px;
 }
 
 .others-clients-list {

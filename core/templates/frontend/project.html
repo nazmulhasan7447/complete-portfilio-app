@@ -87,9 +87,9 @@
       </div>
       <!-- offcanvas ends -->
 
-      <div class="container mt-4">
+      <div class="container-fluid mt-4">
         <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-7">
+          <div class="col-sm-12 col-md-12 col-lg-8">
             <div class="tab-content" id="pills-tabContent">
               <div
                 class="tab-pane fade show active"
@@ -185,7 +185,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-5">
+          <div class="col-sm-12 col-md-12 col-lg-4">
             <div class="project-right-sidebar">
               <div class="client-project-category-section">
                 <div>
@@ -219,19 +219,29 @@
                     onclick="addAsterisk(this);"
                   >
                     <div class="project-catalog-section">
-                      <div class="catelog-title-section">
-                        <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
-                        <p>Fall 2021 Catalog</p>
-                      </div>
-
-                      <div class="catalog-category-section">
-                        <p class="name">Editorial design & art direction</p>
-                        <p class="asterisk-img">
-                          <img src="{% static 'frontend/assets/images/star_1.png' %}" />
-                        </p>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img
+                            src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}"
+                            style="width: 100%; height: 100%"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <p class="sub-catalog">Fall 2021 Catalog</p>
+                        </div>
+                        <div class="col-md-4 asterisk-img-section">
+                          <p class="name">Editorial design & art direction</p>
+                          <p class="asterisk-img">
+                            <img
+                              src="{% static 'frontend/assets/images/star_1.png' %}"
+                              style="width: 20px; height: 20px"
+                            />
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </li>
+
                   <li
                     class=""
                     id="pills-home-tab"
@@ -243,13 +253,20 @@
                     onclick="addAsterisk(this);"
                   >
                     <div class="project-catalog-section">
-                      <div class="catelog-title-section">
-                        <img src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}" />
-                        <p>Fall 2021 Catalog</p>
-                      </div>
-                      <div class="catalog-category-section">
-                        <p>Editorial design & art direction</p>
-                        <p class="asterisk-img"></p>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img
+                            src="{% static 'frontend/assets/images/portfolio-home-page.jpg' %}"
+                            style="width: 100%; height: 100%"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <p class="sub-catalog">Fall 2021 Catalog</p>
+                        </div>
+                        <div class="col-md-4 asterisk-img-section">
+                          <p class="name">Editorial design & art direction</p>
+                          <p class="asterisk-img"></p>
+                        </div>
                       </div>
                     </div>
                   </li>
