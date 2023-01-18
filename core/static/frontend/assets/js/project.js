@@ -10,7 +10,6 @@ function addAsterisk(target) {
       categories[i].children[0].children[0].children[2].children[1].children
         .length === 0
     ) {
-      console.log(1);
       var tag = document.createElement("img");
       tag.src = "/static/frontend/assets/images/star_1.png";
       categories[i].children[0].children[0].children[2].children[1].appendChild(
